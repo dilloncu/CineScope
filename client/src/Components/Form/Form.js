@@ -39,7 +39,7 @@ export default function Form() {
         <p>{movieData.Director}</p>
         <p>{movieData.Plot}</p>
         <p>{movieData.Actors}</p>
-        <p>{movieData.Poster}</p>
+        <img src={movieData.Poster} alt={movieData.Title}></img>
       </div>
     </div>
   );
