@@ -1,10 +1,20 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Form() {
   const [movieTitle, setMovieTitle] = useState("");
   const [movieData, setMovieData] = useState({});
+  const [playerData, setPlayerData] = useState({});
+  useEffect(() => {
+    player();
+  }, [movieData]);
+
+  const player = async () => {
+    const API = `http://localhost:9010/videos?title=${movieTitle}`;
+    const res = await axios.get(API);
+    setPlayerData(res.data);
+  };
 
   const handleInputChange = (event) => {
     setMovieTitle(event.target.value);
@@ -41,6 +51,19 @@ export default function Form() {
         <p>{movieData.Actors}</p>
         <img src={movieData.Poster} alt={movieData.Title}></img>
       </div>
+
+      {movieTitle ? (
+        <iframe
+          title={movieData.Title}
+          width="560"
+          height="315"
+          src={`https://www.youtube.com/embed/${playerData}`}
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }
