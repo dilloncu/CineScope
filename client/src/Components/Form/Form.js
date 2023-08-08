@@ -5,16 +5,16 @@ import axios from "axios";
 export default function Form() {
   const [movieTitle, setMovieTitle] = useState("");
   const [movieData, setMovieData] = useState({});
-  const [playerData, setPlayerData] = useState({});
-  useEffect(() => {
-    player();
-  }, [movieData]);
+  // const [playerData, setPlayerData] = useState({});
+  // useEffect(() => {
+  //   player();
+  // }, [movieData]);
 
-  const player = async () => {
-    const API = `http://localhost:9010/videos?title=${movieTitle}`;
-    const res = await axios.get(API);
-    setPlayerData(res.data);
-  };
+  // const player = async () => {
+  //   const API = `http://localhost:9010/videos?title=${movieTitle}`;
+  //   const res = await axios.get(API);
+  //   setPlayerData(res.data);
+  // };
 
   const handleInputChange = (event) => {
     setMovieTitle(event.target.value);
@@ -43,16 +43,20 @@ export default function Form() {
       </form>
 
       <div>
-        <h2> {movieData.Title} </h2>
-        <p>{movieData.Released}</p>
-        <p>{movieData.Genre}</p>
-        <p>{movieData.Director}</p>
-        <p>{movieData.Plot}</p>
-        <p>{movieData.Actors}</p>
+        <div className="Data">
+          <h2> {movieData.Title} </h2>
+          <p>{movieData.Released}</p>
+          <p>{movieData.Genre}</p>
+          <p>{movieData.Director}</p>
+          <p>{movieData.Plot}</p>
+          <p>{movieData.Actors}</p>
+          <p>{movieData.Runtime}</p>
+          <p>{movieData.imdbRating}</p>
+        </div>
         <img src={movieData.Poster} alt={movieData.Title}></img>
       </div>
 
-      {movieTitle ? (
+      {/* {movieTitle ? (
         <iframe
           title={movieData.Title}
           width="560"
@@ -63,7 +67,7 @@ export default function Form() {
         ></iframe>
       ) : (
         <div></div>
-      )}
+      )} */}
     </div>
   );
 }
