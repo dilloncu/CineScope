@@ -53,7 +53,10 @@ export default function Form() {
           <p>{movieData.Runtime}</p>
           <p>{movieData.imdbRating}</p>
         </div>
-        <img src={movieData.Poster} alt={movieData.Title}></img>
+        <div className="container">
+          <img src={movieData.Poster} alt={movieData.Title}></img>
+          <div class="overlay"></div>
+        </div>
       </div>
 
       {/* {movieTitle ? (
