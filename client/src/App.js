@@ -1,6 +1,6 @@
-import './App.css';
-import Form from "./Components/Form/Form"
-
+import "./Reset.css";
+import "./App.css";
+import Form from "./Components/Form/Form";
 
 function App() {
   return (
