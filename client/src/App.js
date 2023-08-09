@@ -5,7 +5,9 @@ import Form from "./Components/Form/Form";
 function App() {
   return (
     <div className="App">
-      <h1>CineScope</h1>
+      <h1>
+        Cine<span class="highlight"></span>
+      </h1>
       <Form />
     </div>
   );
