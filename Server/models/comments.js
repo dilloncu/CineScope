@@ -5,7 +5,7 @@ const commentsSchema = new Schema({
   id: String,
   tiltle: String,
   year: Number,
-  comment: String,
+  comment: String
 });
 
 const Comments = mongoose.model("Comments", commentsSchema);
