@@ -8,45 +8,158 @@
 
 p {
   font-family: "Urbanist", sans-serif;
+  color: rgb(255, 255, 255);
+  line-height: 25px;
+  font-size: 20px;
+}
+
+.num {
+  color: rgb(255, 217, 0);
 }
 
 h1 {
   font-family: "Figtree", sans-serif;
   height: 100%;
   font-size: 40px;
+  color: rgb(255, 255, 255);
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+.highlight::after {
+  content: "Scope";
+  color: rgb(255, 217, 0);
+}
+
+.director::after {
+  content: "Director :";
+  color: rgb(255, 217, 0);
+}
+.actor::after {
+  content: "Actors :";
+  color: rgb(255, 217, 0);
 }
 
 h2 {
   font-family: "Urbanist", sans-serif;
   font-weight: 600;
+  color: rgb(255, 255, 255);
+  font-size: 70px;
 }
 
-.header {
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
   display: flex;
-  margin: 3%;
-  margin-top: 2%;
+  align-items: center;
+}
+
+.imgcontainer {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bgimg {
+  position: fixed;
+  width: 110%;
+  top: -40%;
+  filter: blur(25px);
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 160%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  top: 0;
+}
+
+form {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 3%;
+  margin-right: 5%;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  position: relative;
+  filter: blur(0px);
+  top: auto;
+  -webkit-filter: invert(100%);
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+  position: relative;
+  filter: blur(0px);
+  margin-right: 10px;
+  margin-top: 1px;
 }
 
 .tab {
+  background-color: rgba(226, 253, 255, 0.161);
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  border-width: 1px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 50px;
   font-family: "Urbanist", sans-serif;
-  margin-left: 70%;
-  margin-top: 20px;
-  z-index: 2;
+  font-size: 15px;
+  color: aliceblue;
+  margin-right: 10px;
+  width: 250px;
 }
 
-.container {
-  position: absolute;
-  width: 100%;
-  height: 1080px;
-  overflow: hidden;
-  top: 0;
-  z-index: -1;
+.data {
+  margin: 5%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0;
+  margin-top: 3%;
 }
 
-img {
-  position: absolute;
-  top: -100px;
-  width: 100%;
-  width: 100%;
-  filter: blur(10px);
+.GRR {
+  margin-top: 15px;
+}
+
+.DA {
+  margin-top: 15px;
+}
+
+.plot {
+  margin-top: 15px;
+  max-width: 90%;
+}
+
+.rating {
+  display: flex;
+  margin-top: 15px;
+}
+
+.poster {
+  max-height: 100%;
+}
+
+.video {
+  margin-top: 15px;
 }
