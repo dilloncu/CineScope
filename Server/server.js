@@ -11,12 +11,39 @@ app.use(cors());
 app.use(bp.json());
 // Create an endpoint to the root route
 
-// const Books = require("./models/Books");
+const Comments = require("./models/comments");
 
-// mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect(process.env.MONGODB_KEY);
 
 app.get("/", (request, response) => {
   response.status(200).json("can I be heard?");
+});
+
+//view comments
+app.get("/moviesComment", async (request, response) => {
+  const comment = await Comments.find();
+  response.status(200).json(comment);
+});
+
+// create comments
+app.post("/moviesComment", async (request, response) => {
+  const newComment = await Comments.create(request.body);
+  response.status(200).json(newComment);
+});
+
+// update comments
+
+app.put("/moviesComment/:id", (response, request) => {
+  Comments.findByIdAndUpdate(request.params.id, request.body);
+  response.status(204).send();
+});
+
+// delete comments
+
+app.delete("/moviesComment/:id", async (request, response) => {
+  const id = request.params.id;
+  const deleteComment = await Comments.findByIdAndDelete(id);
+  response.status(200).json(deleteComment);
 });
 
 app.get("/movies", async (request, response) => {
