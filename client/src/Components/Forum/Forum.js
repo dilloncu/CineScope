@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import bgimage from "./icons/Abstract 2.png";
+import "./Forum.css";
 export default function Forum() {
   const [userName, setUsername] = useState("");
 
@@ -49,8 +50,8 @@ export default function Forum() {
   return (
     <div>
       <div className="about-us">
-        <h3>ABOUT US</h3>
-        <p>
+        <h3 class="aboutbox">ABOUT US</h3>
+        <p class="parabox">
           This application should focus on targeting film enthusiasts or anyone
           who wants to find out more information about a certain film. The
           application should provide them with the ability to search for a film
@@ -58,15 +59,23 @@ export default function Forum() {
           through a clean UI and easy to navigate interface.
         </p>
       </div>
-      <form>
+      <form className="message">
         <input
+          class="part1"
           className="username"
           placeholder="name"
           type="text"
           onChange={setUsername}
         ></input>
-        <input className="comment" placeholder="comment" type="text"></input>
-        <button className="submit" alt="submit"></button>
+        <input
+          class="part2"
+          className="comment"
+          placeholder="comment"
+          type="text"
+        ></input>
+        <button class="part3" className="submit" alt="submit">
+          submit
+        </button>
       </form>
       <div className="comments">
         {/* <FormRender
@@ -75,6 +84,7 @@ export default function Forum() {
           handleUpdateMovie={handleUpdateComment}
         /> */}
       </div>
+      <img className="hero" src={bgimage}></img>
     </div>
   );
 }

@@ -198,3 +198,83 @@ h2 {
 .video {
   margin-top: 15px;
 }
+
+.parabox {
+  width: 1258px;
+  height: 278px;
+  color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: absolute;
+  display: flex;
+  top: 221px;
+  right: 26px;
+  bottom: 0px;
+  left: 178px;
+}
+
+.aboutbox {
+  /* width: 1258px;
+  height: 278px; */
+  /* color: #fff;
+  font-size: 0px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal; */
+  position: absolute;
+  display: flex;
+  top: -470px;
+  right: 1300px;
+  bottom: 0px;
+  left: 135px;
+}
+
+.part1 {
+  width: 503px;
+  height: 85px;
+  border: 1px solid #000;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.part2 {
+  width: 503px;
+  height: 85px;
+  border: 1px solid #000;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.part3 {
+  width: 145px;
+  height: 85px;
+  border: 1px solid #000;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.part1,
+.part2,
+.part3 {
+  position: absolute;
+  display: flex;
+  top: -470px;
+  right: 1300px;
+  bottom: 0px;
+  left: 135px;
+}
+
+.message {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 50%;
+  left: 42.5%;
+  width: 200px;
+  height: 35px;
+  border: 1px solid #000;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
