@@ -1,4 +1,66 @@
-.hometab {
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+* {
+  margin: 0;
+}
+
+.App {
+  width: 100%;
+}
+
+p {
+  font-family: "Urbanist", sans-serif;
+  color: rgb(255, 255, 255);
+  line-height: 25px;
+  font-size: 20px;
+}
+
+h3 {
+  font-family: "Figtree", sans-serif;
+  height: 100%;
+  font-size: 60px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 300px;
+}
+
+.highlight2::after {
+  content: "Scope";
+  color: rgb(255, 217, 0);
+}
+
+.button2 {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.form2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.icon2 {
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  position: relative;
+  filter: blur(0px);
+  top: auto;
+  -webkit-filter: invert(100%);
+}
+
+.tab2 {
   background-color: rgba(226, 253, 255, 0.161);
   border-style: solid;
   border-color: rgb(255, 255, 255);

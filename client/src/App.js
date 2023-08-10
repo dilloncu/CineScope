@@ -45,9 +45,6 @@ function App() {
             </Link>
           </ul>
         </nav>
-        <h1>
-          Cine<span className="highlight"></span>
-        </h1>
       </div>
       <Routes>
         <Route
