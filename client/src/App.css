@@ -13,6 +13,41 @@ p {
   font-size: 20px;
 }
 
+ul {
+  font-family: "Urbanist", sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 40%;
+  right: 40%;
+  top: 5%;
+  margin-top: 5px;
+}
+
+li {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.list {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.738);
+  padding: 5px;
+  transition: all 0.2s ease-in-out;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.list:hover {
+  color: rgb(255, 255, 255);
+  transition: scale(1.9);
+}
+
 .num {
   color: rgb(255, 217, 0);
 }
@@ -83,7 +118,7 @@ h2 {
   top: 0;
 }
 
-form {
+.form1 {
   position: fixed;
   top: 0;
   right: 0;

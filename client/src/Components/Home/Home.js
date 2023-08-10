@@ -19,11 +19,13 @@ export default function Home({ setMovieData, handleInputChange, movieTitle }) {
 
   return (
     <div>
-      <h1 className="home-title">CineScope</h1>
-      <form>
+      <h3>
+        Cine<span className="highlight2"></span>
+      </h3>
+      <form className="form2">
         <input
-          className="hometab"
-          placeholder="search movies2"
+          className="tab2"
+          placeholder="search movies"
           type="text"
           onChange={handleInputChange}
         ></input>

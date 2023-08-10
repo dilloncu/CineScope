@@ -13,7 +13,10 @@ export default function Form({
 }) {
   return (
     <div>
-      <form>
+      <h1>
+        Cine<span className="highlight"></span>
+      </h1>
+      <form className="form1">
         <input
           className="tab"
           placeholder="search movies"
