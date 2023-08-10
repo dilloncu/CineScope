@@ -5,9 +5,7 @@ const Comments = require("./models/comments");
 
 async function seed() {
   await Comments.create({
-    id: "23222332iiiiii",
-    tiltle: "just a try",
-    year: 2014,
+    name: "Kumail",
     comment: "good movie",
   });
 
