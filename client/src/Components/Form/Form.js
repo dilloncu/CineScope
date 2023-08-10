@@ -4,32 +4,13 @@ import axios from "axios";
 import searchIcon from "./icons/Search.png";
 import starIcon from "./icons/star.png";
 
-export default function Form() {
-  const [movieTitle, setMovieTitle] = useState("");
-  const [movieData, setMovieData] = useState({});
-  const [playerData, setPlayerData] = useState({});
-  useEffect(() => {
-    player();
-  }, [movieData]);
-
-  const player = async () => {
-    const API = `http://localhost:9010/videos?title=${movieTitle}`;
-    const res = await axios.get(API);
-    setPlayerData(res.data);
-  };
-
-  const handleInputChange = (event) => {
-    setMovieTitle(event.target.value);
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const API = `http://localhost:9010/movies?title=${movieTitle}`;
-    const response = await axios.get(API);
-    console.log(response);
-    setMovieData(response.data);
-  };
-
+export default function Form({
+  movieData,
+  handleInputChange,
+  handleSubmit,
+  movieTitle,
+  playerData,
+}) {
   return (
     <div>
       <form>
@@ -55,10 +36,10 @@ export default function Form() {
             </div>
             <div className="DA">
               <p>
-                <span class="director"></span> {movieData.Director}
+                <span className="director"></span> {movieData.Director}
               </p>
               <p>
-                <span class="actor"></span> {movieData.Actors}
+                <span className="actor"></span> {movieData.Actors}
               </p>
             </div>
             <p className="plot">{movieData.Plot}</p>
@@ -101,11 +82,3 @@ export default function Form() {
     </div>
   );
 }
-
-// movieData.Title
-// movieData.Released
-// movieData.Genre
-// movieData.Director
-// movieData.Plot
-// movieData.Actors
-// movieData.Poster

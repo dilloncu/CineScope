@@ -1,0 +1,15 @@
+.hometab {
+  background-color: rgba(226, 253, 255, 0.161);
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  border-width: 1px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 50px;
+  font-family: "Urbanist", sans-serif;
+  font-size: 15px;
+  color: aliceblue;
+  margin-right: 10px;
+  width: 250px;
+}

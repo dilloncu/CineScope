@@ -1,15 +1,80 @@
 import "./Reset.css";
 import "./App.css";
 import Form from "./Components/Form/Form";
+import Forum from "./Components/Forum/Forum";
+import Home from "./Components/Home/Home";
+import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function App() {
+  const [movieTitle, setMovieTitle] = useState("");
+  const [movieData, setMovieData] = useState({});
+  const [playerData, setPlayerData] = useState({});
+  useEffect(() => {
+    player();
+  }, [movieData]);
+
+  const player = async () => {
+    const API = `http://localhost:9010/videos?title=${movieTitle}`;
+    const res = await axios.get(API);
+    setPlayerData(res.data);
+  };
+
+  const handleInputChange = (event) => {
+    setMovieTitle(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const API = `http://localhost:9010/movies?title=${movieTitle}`;
+    const response = await axios.get(API);
+    console.log(response);
+    setMovieData(response.data);
+  };
   return (
-    <div className="App">
-      <h1>
-        Cine<span class="highlight"></span>
-      </h1>
-      <Form />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <nav>
+          <ul>
+            <Link to="/Forum" className="list">
+              Forum
+            </Link>
+            <Link to="/Form" className="list">
+              Movies
+            </Link>
+          </ul>
+        </nav>
+        <h1>
+          Cine<span className="highlight"></span>
+        </h1>
+      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              setMovieData={setMovieData}
+              handleInputChange={handleInputChange}
+              movieTitle={movieTitle}
+            />
+          }
+        />
+        <Route path="/Forum" element={<Forum />} />
+        <Route
+          path="/Form"
+          element={
+            <Form
+              movieData={movieData}
+              handleInputChange={handleInputChange}
+              handleSubmit={handleSubmit}
+              movieTitle={movieTitle}
+              playerData={playerData}
+            />
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
