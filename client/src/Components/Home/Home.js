@@ -1,5 +1,6 @@
 import React from "react";
 import searchIcon from "./icons/Search.png";
+import bgimage from "./icons/Abstract 2.png";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -33,6 +34,7 @@ export default function Home({ setMovieData, handleInputChange, movieTitle }) {
           <img className="icon2" src={searchIcon} alt="submit" />
         </button>
       </form>
+      <img className="hero" src={bgimage}></img>
     </div>
   );
 }
