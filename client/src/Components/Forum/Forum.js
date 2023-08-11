@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import bgimage from "./icons/Abstract 2.png";
-import "./Forum.css";
-export default function Forum() {
-  const [userName, setUsername] = useState("");
+import RenderForms from "../RenderForms/RenderForms";
+import NewForm from "../NewForm/NewForm";
+// import "./Forum.css";
 
+export default function Forum() {
   //   new code down
   const [comments, setComments] = useState([]);
 
@@ -50,8 +50,8 @@ export default function Forum() {
   return (
     <div>
       <div className="about-us">
-        <h3 class="aboutbox">ABOUT US</h3>
-        <p class="parabox">
+        <h3>ABOUT US</h3>
+        <p>
           This application should focus on targeting film enthusiasts or anyone
           who wants to find out more information about a certain film. The
           application should provide them with the ability to search for a film
@@ -59,32 +59,15 @@ export default function Forum() {
           through a clean UI and easy to navigate interface.
         </p>
       </div>
-      <form className="message">
-        <input
-          class="part1"
-          className="username"
-          placeholder="name"
-          type="text"
-          onChange={setUsername}
-        ></input>
-        <input
-          class="part2"
-          className="comment"
-          placeholder="comment"
-          type="text"
-        ></input>
-        <button class="part3" className="submit" alt="submit">
-          submit
-        </button>
-      </form>
       <div className="comments">
-        {/* <FormRender
+        <RenderForms
           comments={comments}
-          handleDelete={handleDeleteComment}
-          handleUpdateMovie={handleUpdateComment}
-        /> */}
+          handleDeleteComment={handleDeleteComment}
+          handleUpdateComment={handleUpdateComment}
+        />
+        <NewForm onSubmitFunc={handleAddComment} />
       </div>
-      <img className="hero" src={bgimage}></img>
+      {/* <img className="hero" src={bgimage}></img> */}
     </div>
   );
 }
