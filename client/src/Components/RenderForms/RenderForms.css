@@ -1,10 +1,33 @@
 .s-container {
   cursor: pointer;
+  position: relative;
+  left: 30vw;
+  font-weight: 700;
+}
+
+.s-container:hover {
+  color: red;
 }
 
 .Container {
   margin-top: 2vh;
   border: solid yellow;
+  display: inline;
+  background-color: rgba(238, 241, 213, 0.5);
+}
+
+.m-container {
   display: grid;
-  grid-row: 1 / span 3;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+.name {
+  font-weight: 700;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+}
+
+.views {
+  color: black;
+  font-size: 1pc;
 }

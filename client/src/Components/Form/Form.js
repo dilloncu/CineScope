@@ -1,40 +1,47 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import axios from "axios";
+// import { useState, useEffect } from "react";
+// import axios from "axios";
 import searchIcon from "./icons/Search.png";
 import starIcon from "./icons/star.png";
+import "./Form.css";
 
-export default function Form() {
-  const [movieTitle, setMovieTitle] = useState("");
-  const [movieData, setMovieData] = useState({});
-  const [playerData, setPlayerData] = useState({});
-  useEffect(() => {
-    player();
-  }, [movieData]);
+export default function Form({
+  movieData,
+  handleInputChange,
+  handleSubmit,
+  movieTitle,
+  playerData,
+}) {
+  // const [movieTitle, setMovieTitle] = useState("");
+  // const [movieData, setMovieData] = useState({});
+  // const [playerData, setPlayerData] = useState({});
+  // useEffect(() => {
+  //   player();
+  // }, [movieData]);
 
-  const player = async () => {
-    const API = `http://localhost:9010/videos?title=${movieTitle}`;
-    const res = await axios.get(API);
-    setPlayerData(res.data);
-  };
+  // const player = async () => {
+  //   const API = `http://localhost:9010/videos?title=${movieTitle}`;
+  //   const res = await axios.get(API);
+  //   setPlayerData(res.data);
+  // };
 
-  const handleInputChange = (event) => {
-    setMovieTitle(event.target.value);
-  };
+  // const handleInputChange = (event) => {
+  //   setMovieTitle(event.target.value);
+  // };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const API = `http://localhost:9010/movies?title=${movieTitle}&year=${movieData.Released}`;
-    const response = await axios.get(API);
-    console.log(response);
-    setMovieData(response.data);
-  };
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   const API = `http://localhost:9010/movies?title=${movieTitle}&year=${movieData.Released}`;
+  //   const response = await axios.get(API);
+  //   console.log(response);
+  //   setMovieData(response.data);
+  // };
 
   return (
     <div>
-      <form>
+      <form className="hometab">
         <input
-          className="tab"
+          className="hometab1"
           placeholder="search movies"
           type="text"
           onChange={handleInputChange}
@@ -53,22 +60,27 @@ export default function Form() {
               <p className="num">{movieData.Runtime}</p>
               <p className="num">{movieData.Released}</p>
             </div>
-            <div className="DA">
-              <p>
-                <span class="director"></span> {movieData.Director}
-              </p>
-              <p>
-                <span class="actor"></span> {movieData.Actors}
-              </p>
-            </div>
-            <p className="plot">{movieData.Plot}</p>
 
-            <div className="rating">
-              <img className="star" src={starIcon} alt="star" />
-              <p>{movieData.imdbRating}</p>
-            </div>
+            {movieData.Director && (
+              <div>
+                <div className="DA">
+                  <p>
+                    <span class="director"></span> {movieData.Director}
+                  </p>
+                  <p>
+                    <span class="actor"></span> {movieData.Actors}
+                  </p>
+                </div>
+                <p className="plot">{movieData.Plot}</p>
+
+                <div className="rating">
+                  <img className="star" src={starIcon} alt="star" />
+                  <p>{movieData.imdbRating}</p>
+                </div>
+              </div>
+            )}
             <div className="video-container">
-              {movieTitle ? (
+              {movieData.Title && (
                 <iframe
                   className="video"
                   title={movieData.Title}
@@ -78,8 +90,6 @@ export default function Form() {
                   frameborder="0"
                   allowfullscreen
                 ></iframe>
-              ) : (
-                <div></div>
               )}
             </div>
           </div>

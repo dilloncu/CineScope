@@ -14,15 +14,17 @@ export default function RenderForms({
           return (
             <div key={comment._id}>
               {
-                <div className="Container">
-                  <p
-                    className="s-container"
-                    onClick={() => handleDeleteComment(comment._id)}
-                  >
-                    X
-                  </p>
-                  <h2>{comment.name}</h2>
-                  <p>{comment.comment}</p>
+                <div className="m-container">
+                  <div className="Container">
+                    <p
+                      className="s-container"
+                      onClick={() => handleDeleteComment(comment._id)}
+                    >
+                      X
+                    </p>
+                    <p className="name">{comment.name}</p>
+                    <p className="views">{comment.comment}</p>
+                  </div>
                 </div>
               }
 

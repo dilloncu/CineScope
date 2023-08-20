@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import RenderForms from "../RenderForms/RenderForms";
 import NewForm from "../NewForm/NewForm";
-// import "./Forum.css";
+import "./Forum.css";
 
 export default function Forum() {
   //   new code down
@@ -65,8 +65,11 @@ export default function Forum() {
           handleDeleteComment={handleDeleteComment}
           handleUpdateComment={handleUpdateComment}
         />
+      </div>
+      <div className="newform">
         <NewForm onSubmitFunc={handleAddComment} />
       </div>
+
       {/* <img className="hero" src={bgimage}></img> */}
     </div>
   );

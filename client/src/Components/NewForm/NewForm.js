@@ -23,7 +23,7 @@ export default function Form({ onSubmitFunc, comment }) {
 
   return (
     <div>
-      <form className="message" onSubmit={submit}>
+      <form className="message" onSubmit={submit} id="nform">
         <input
           class="part1"
           className="username"
@@ -31,20 +31,24 @@ export default function Form({ onSubmitFunc, comment }) {
           onChange={handleChange}
           name="name"
           value={formData.name}
+          required
         ></input>
 
-        <input
-          class="part2"
-          className="comment"
-          placeholder="comments"
-          onChange={handleChange}
-          name="comment"
-          value={formData.comment}
-        ></input>
         <button class="part3" className="submit" type="submit">
-          {comment ? "Update" : "Add Comment"}
+          Add Comment
         </button>
       </form>
+      <textarea
+        form="nform"
+        rows={4}
+        cols={55}
+        // class="part2"
+        className="text_area"
+        placeholder="comments"
+        onChange={handleChange}
+        name="comment"
+        value={formData.comment}
+      ></textarea>
     </div>
   );
 }
